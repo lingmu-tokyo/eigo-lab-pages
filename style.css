@@ -48,8 +48,8 @@ a { color: var(--accent); }
 
 .mast { display: flex; align-items: center; gap: 14px; margin-bottom: 22px; }
 .mast-link { text-decoration: none; color: inherit; display: block; }
-.mast .logo { height: 44px; width: auto; display: block; }
-.mast .sub { font-size: 12px; font-weight: 700; color: var(--ink-soft); padding-left: 14px; border-left: 2px solid var(--rule); line-height: 1.5; }
+.mast .logo { height: 44px; width: auto; display: block; flex-shrink: 0; }
+.mast .sub { white-space: nowrap; font-size: 12px; font-weight: 700; color: var(--ink-soft); padding-left: 14px; border-left: 2px solid var(--rule); line-height: 1.5; }
 :root[data-theme="dark"] .mast .logo, :root:not([data-theme="light"]) .mast .logo { }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .mast .logo { background: #FFFDF6; border-radius: 12px; padding: 6px 12px; } }
 :root[data-theme="dark"] .mast .logo { background: #FFFDF6; border-radius: 12px; padding: 6px 12px; }
@@ -134,4 +134,12 @@ footer {
   text-align: right;
   font-size: 12px;
   color: var(--ink-soft);
+}
+
+@media (max-width: 480px) {
+  .mast { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .mast .sub { border-left: none; padding-left: 2px; }
+  .wrap { padding: 24px 14px 48px; }
+  .card { padding: 22px 16px; border-radius: 20px; }
+  .mast .logo { height: 40px; }
 }
